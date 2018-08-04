@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+name = "pypi"
+verify_ssl = true
+
+[scripts]
+check = "mypy phonebook/ scripts/ tests/ --ignore-missing-imports --disallow-untyped-calls"
+migrate = "./scripts/migrate.py"
+reset = "./scripts/reset.py"
+start = "python3 phonebook/"
+test = "pytest ./tests"
+
+[packages]
+python-telegram-bot = "==10.1.0"
+
+[dev-packages]
+mypy = "==0.620"
+pytest = "==3.7.1"
+
+[requires]
+python_version = "3.7"

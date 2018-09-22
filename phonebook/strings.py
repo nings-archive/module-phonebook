@@ -3,9 +3,8 @@ START = (
     'Welcome to <i>USPhonebook</i>, an interactive directory for module '
     'discussion telegram chat groups.'
     '\n\n'
-    'This bot is currently in beta. For more information, please contact '
-    '@ningyuan. To contribute, please visit the open source <a href="{}">'
-    'GitHub repository</a>.'
+    'For more information, please contact @ningyuan. To contribute, please '
+    'visit the open source <a href="{}">GitHub repository</a>.'
 ).format('https://github.com/ningyuansg/module-phonebook')
 
 # /all response

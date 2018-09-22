@@ -40,6 +40,11 @@ ADD_OK = (
     'An entry for <code>{}</code> has been added with invite link {}'
 )
 
+# responses to using private-message-only commands in non-private-messages
+PRIVATE_MESSAGES_ONLY = (
+    'Oops, the command {} will only work over pm!'
+)
+
 def strfgroup(group):
     pretty_code = '<code>{:9}</code>'.format(group.code)
     pretty_link = '<a href="{}">Invite link</a>'.format(group.url)

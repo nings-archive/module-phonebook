@@ -2,7 +2,7 @@ import logging, os
 import telegram
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 
-import db, states, strings, validate
+import db, states, strings, utils, validate
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -12,7 +12,8 @@ def start(bot, update):
     return bot.send_message(
         chat_id=update.message.chat_id,
         text=strings.START,
-        parse_mode=telegram.ParseMode.HTML
+        parse_mode=telegram.ParseMode.HTML,
+        disable_web_page_preview=True
     )
 
 @db.record_stat
@@ -29,6 +30,7 @@ def _all(bot, update):
         parse_mode=telegram.ParseMode.HTML
     )
 
+@utils.restrict_to_private_messages
 @db.record_stat
 def add(bot, update):
     db.update_user_state(update.message.chat_id, states.ADD_PROMPT_CODE)
@@ -104,6 +106,7 @@ def handle_messages_state_add_prompt_url(bot, update):
 
 bot = Updater(token=os.environ['TOKEN'])
 bot.dispatcher.add_handler(CommandHandler('start', start))
+bot.dispatcher.add_handler(CommandHandler('help', start))
 bot.dispatcher.add_handler(CommandHandler('all', _all))
 bot.dispatcher.add_handler(CommandHandler('add', add))
 bot.dispatcher.add_handler(CommandHandler('cancel', cancel))

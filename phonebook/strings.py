@@ -3,9 +3,8 @@ START = (
     'Welcome to <i>USPhonebook</i>, an interactive directory for module '
     'discussion telegram chat groups.'
     '\n\n'
-    'This bot is currently in beta. For more information, please contact '
-    '@ningyuan. To contribute, please visit the open source <a href="{}">'
-    'GitHub repository</a>.'
+    'For more information, please contact @ningyuan. To contribute, please '
+    'visit the open source <a href="{}">GitHub repository</a>.'
 ).format('https://github.com/ningyuansg/module-phonebook')
 
 # /all response
@@ -38,6 +37,11 @@ ADD_OK = (
     'All done!'
     '\n\n'
     'An entry for <code>{}</code> has been added with invite link {}'
+)
+
+# responses to using private-message-only commands in non-private-messages
+PRIVATE_MESSAGES_ONLY = (
+    'Oops, the command {} will only work over pm!'
 )
 
 def strfgroup(group):

@@ -1,7 +1,7 @@
 import os, os.path, random, sqlite3, sys
 import pytest
 
-sys.path.append(os.path.join(os.getcwd()))
+sys.path.append(os.getcwd())
 from scripts.migrate import main as migrate
 import helpers
 

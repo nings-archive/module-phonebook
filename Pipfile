@@ -7,6 +7,7 @@ verify_ssl = true
 check = "mypy phonebook/ scripts/ tests/ --ignore-missing-imports --disallow-untyped-calls"
 migrate = "./scripts/migrate.py"
 reset = "./scripts/reset.py"
+shell = "python3 -i -c 'from phonebook import *'"
 start = "python3 phonebook/"
 test = "pytest ./tests"
 

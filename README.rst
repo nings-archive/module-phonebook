@@ -33,6 +33,9 @@ Pipenv Scripts
     Creates a database file, including the necessary tables.
 ``reset``
     Deletes the current database file, then runs ``migrate`` (above).
+``shell``
+    Starts an interactive python3 session, with submodules of the
+    ``./phonebook`` already imported.
 ``start``
     Starts the bot.
 ``test``
